@@ -1,4 +1,6 @@
 import React from 'react';
+import NotFound from './404';
+import { ErrorBoundary } from 'react-error-boundary';
 
 class ErrorBoundaryTest extends React.Component {
     state = {hasError: false};
@@ -9,7 +11,7 @@ class ErrorBoundaryTest extends React.Component {
 
     render() {
         if (this.state.hasError){
-            return <div>Error occurred!</div>
+            return <NotFound/>
         }
         return <button onClick={() => {throw new Error('Synthetic Test Error') }}></button>
     }
